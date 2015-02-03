@@ -8,11 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		D86B10EA1A810FB10066E529 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B10E91A810FB10066E529 /* AppDelegate.swift */; };
-		D86B10EC1A810FB10066E529 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B10EB1A810FB10066E529 /* ViewController.swift */; };
+		D86B10EC1A810FB10066E529 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B10EB1A810FB10066E529 /* LoginViewController.swift */; };
 		D86B10EF1A810FB10066E529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86B10ED1A810FB10066E529 /* Main.storyboard */; };
 		D86B10F11A810FB10066E529 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D86B10F01A810FB10066E529 /* Images.xcassets */; };
 		D86B10F41A810FB10066E529 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D86B10F21A810FB10066E529 /* LaunchScreen.xib */; };
 		D86B11001A810FB10066E529 /* SeatShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B10FF1A810FB10066E529 /* SeatShareTests.swift */; };
+		D86B110D1A8117660066E529 /* NewSeat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D86B110B1A8117660066E529 /* NewSeat.storyboard */; };
+		D86B11111A8131010066E529 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B11101A8131010066E529 /* FeedTableViewController.swift */; };
+		D86B11151A81316C0066E529 /* MyFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B11141A81316C0066E529 /* MyFeedTableViewController.swift */; };
+		D86B11171A8152140066E529 /* NewSeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B11161A8152140066E529 /* NewSeatViewController.swift */; };
+		D86B111E1A8154600066E529 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B11191A81545F0066E529 /* Bolts.framework */; };
+		D86B111F1A8154600066E529 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B111A1A81545F0066E529 /* Parse.framework */; };
+		D86B11201A8154600066E529 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B111B1A81545F0066E529 /* ParseCrashReporting.framework */; };
+		D86B11211A8154600066E529 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B111C1A81545F0066E529 /* ParseFacebookUtils.framework */; };
+		D86B11221A8154600066E529 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B111D1A81545F0066E529 /* ParseUI.framework */; };
+		D86B11271A81571A0066E529 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B11261A81571A0066E529 /* AudioToolbox.framework */; };
+		D86B112B1A8157740066E529 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B112A1A8157740066E529 /* libsqlite3.dylib */; };
+		D86B112D1A8157810066E529 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B112C1A8157810066E529 /* SystemConfiguration.framework */; };
+		D86B112F1A8157940066E529 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86B112E1A8157940066E529 /* MobileCoreServices.framework */; };
+		D86B11321A815B780066E529 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86B11311A815B780066E529 /* FeedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +43,30 @@
 		D86B10E41A810FB10066E529 /* SeatShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeatShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86B10E81A810FB10066E529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86B10E91A810FB10066E529 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D86B10EB1A810FB10066E529 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D86B10EB1A810FB10066E529 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D86B10EE1A810FB10066E529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D86B10F01A810FB10066E529 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D86B10F31A810FB10066E529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D86B10F91A810FB10066E529 /* SeatShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeatShareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D86B10FE1A810FB10066E529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D86B10FF1A810FB10066E529 /* SeatShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatShareTests.swift; sourceTree = "<group>"; };
+		D86B11091A8111890066E529 /* Architecture.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = Architecture.md; path = SeatShare/Architecture.md; sourceTree = "<group>"; };
+		D86B110C1A8117660066E529 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/NewSeat.storyboard; sourceTree = "<group>"; };
+		D86B11101A8131010066E529 /* FeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		D86B11141A81316C0066E529 /* MyFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFeedTableViewController.swift; sourceTree = "<group>"; };
+		D86B11161A8152140066E529 /* NewSeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSeatViewController.swift; sourceTree = "<group>"; };
+		D86B11191A81545F0066E529 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D86B111A1A81545F0066E529 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D86B111B1A81545F0066E529 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		D86B111C1A81545F0066E529 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		D86B111D1A81545F0066E529 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		D86B11231A8154EF0066E529 /* SeatShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SeatShare-Bridging-Header.h"; sourceTree = "<group>"; };
+		D86B11261A81571A0066E529 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D86B11281A81572A0066E529 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D86B112A1A8157740066E529 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D86B112C1A8157810066E529 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D86B112E1A8157940066E529 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D86B11311A815B780066E529 /* FeedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +74,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86B112F1A8157940066E529 /* MobileCoreServices.framework in Frameworks */,
+				D86B112D1A8157810066E529 /* SystemConfiguration.framework in Frameworks */,
+				D86B112B1A8157740066E529 /* libsqlite3.dylib in Frameworks */,
+				D86B11271A81571A0066E529 /* AudioToolbox.framework in Frameworks */,
+				D86B111F1A8154600066E529 /* Parse.framework in Frameworks */,
+				D86B11201A8154600066E529 /* ParseCrashReporting.framework in Frameworks */,
+				D86B11221A8154600066E529 /* ParseUI.framework in Frameworks */,
+				D86B11211A8154600066E529 /* ParseFacebookUtils.framework in Frameworks */,
+				D86B111E1A8154600066E529 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,8 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				D86B10E61A810FB10066E529 /* SeatShare */,
+				D86B11091A8111890066E529 /* Architecture.md */,
 				D86B10FC1A810FB10066E529 /* SeatShareTests */,
 				D86B10E51A810FB10066E529 /* Products */,
+				D86B11181A81542C0066E529 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,11 +119,9 @@
 		D86B10E61A810FB10066E529 /* SeatShare */ = {
 			isa = PBXGroup;
 			children = (
-				D86B10E91A810FB10066E529 /* AppDelegate.swift */,
-				D86B10EB1A810FB10066E529 /* ViewController.swift */,
-				D86B10ED1A810FB10066E529 /* Main.storyboard */,
-				D86B10F01A810FB10066E529 /* Images.xcassets */,
-				D86B10F21A810FB10066E529 /* LaunchScreen.xib */,
+				D86B11301A815B1E0066E529 /* Models */,
+				D86B110E1A8130610066E529 /* Main Feeds & Login */,
+				D86B110F1A8130720066E529 /* New Seat */,
 				D86B10E71A810FB10066E529 /* Supporting Files */,
 			);
 			path = SeatShare;
@@ -90,6 +130,10 @@
 		D86B10E71A810FB10066E529 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D86B11231A8154EF0066E529 /* SeatShare-Bridging-Header.h */,
+				D86B10E91A810FB10066E529 /* AppDelegate.swift */,
+				D86B10F21A810FB10066E529 /* LaunchScreen.xib */,
+				D86B10F01A810FB10066E529 /* Images.xcassets */,
 				D86B10E81A810FB10066E529 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +154,51 @@
 				D86B10FE1A810FB10066E529 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D86B110E1A8130610066E529 /* Main Feeds & Login */ = {
+			isa = PBXGroup;
+			children = (
+				D86B10EB1A810FB10066E529 /* LoginViewController.swift */,
+				D86B10ED1A810FB10066E529 /* Main.storyboard */,
+				D86B11101A8131010066E529 /* FeedTableViewController.swift */,
+				D86B11141A81316C0066E529 /* MyFeedTableViewController.swift */,
+			);
+			name = "Main Feeds & Login";
+			sourceTree = "<group>";
+		};
+		D86B110F1A8130720066E529 /* New Seat */ = {
+			isa = PBXGroup;
+			children = (
+				D86B110B1A8117660066E529 /* NewSeat.storyboard */,
+				D86B11161A8152140066E529 /* NewSeatViewController.swift */,
+			);
+			name = "New Seat";
+			sourceTree = "<group>";
+		};
+		D86B11181A81542C0066E529 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D86B112E1A8157940066E529 /* MobileCoreServices.framework */,
+				D86B112C1A8157810066E529 /* SystemConfiguration.framework */,
+				D86B112A1A8157740066E529 /* libsqlite3.dylib */,
+				D86B11281A81572A0066E529 /* CFNetwork.framework */,
+				D86B11261A81571A0066E529 /* AudioToolbox.framework */,
+				D86B11191A81545F0066E529 /* Bolts.framework */,
+				D86B111A1A81545F0066E529 /* Parse.framework */,
+				D86B111B1A81545F0066E529 /* ParseCrashReporting.framework */,
+				D86B111C1A81545F0066E529 /* ParseFacebookUtils.framework */,
+				D86B111D1A81545F0066E529 /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D86B11301A815B1E0066E529 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D86B11311A815B780066E529 /* FeedData.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86B110D1A8117660066E529 /* NewSeat.storyboard in Resources */,
 				D86B10EF1A810FB10066E529 /* Main.storyboard in Resources */,
 				D86B10F41A810FB10066E529 /* LaunchScreen.xib in Resources */,
 				D86B10F11A810FB10066E529 /* Images.xcassets in Resources */,
@@ -212,8 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86B10EC1A810FB10066E529 /* ViewController.swift in Sources */,
+				D86B10EC1A810FB10066E529 /* LoginViewController.swift in Sources */,
+				D86B11151A81316C0066E529 /* MyFeedTableViewController.swift in Sources */,
 				D86B10EA1A810FB10066E529 /* AppDelegate.swift in Sources */,
+				D86B11321A815B780066E529 /* FeedData.swift in Sources */,
+				D86B11171A8152140066E529 /* NewSeatViewController.swift in Sources */,
+				D86B11111A8131010066E529 /* FeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +344,14 @@
 				D86B10F31A810FB10066E529 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		D86B110B1A8117660066E529 /* NewSeat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D86B110C1A8117660066E529 /* Base */,
+			);
+			name = NewSeat.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -336,9 +438,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SeatShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeatShare/SeatShare-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +455,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SeatShare/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SeatShare/SeatShare-Bridging-Header.h";
 			};
 			name = Release;
 		};
