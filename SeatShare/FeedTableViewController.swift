@@ -13,6 +13,8 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.reloadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -20,6 +22,12 @@ class FeedTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+
+        self.tableView.reloadData()
+        
+    }
     
     @IBAction func addNewSeat(sender: AnyObject) {
         
@@ -48,10 +56,12 @@ class FeedTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath) as UITableViewCell
-
+        
         // Configure the cell...
         let seat = FeedData.mainData().feedItems[indexPath.row]
         cell.textLabel?.text = seat["name"] as? String
+        
+
 
         return cell
     }

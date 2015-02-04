@@ -25,6 +25,9 @@ class LoginViewController: UIViewController {
         
         checkIfLoggedIn()
         
+
+        FeedData.mainData().reloadFeed()
+        
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillShowNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
             if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size {
@@ -52,13 +55,59 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginRegister(sender: AnyObject) {
-    
-        isLoggedIn = true
         
-        checkIfLoggedIn()
-        
-        
+        logInToParse()
+     
     }
+    
+    func logInToParse() {
+        
+        var user = PFUser()
+        user.username = usernameField.text
+        user.password = passwordField.text
+
+        PFUser.logInWithUsernameInBackground(user.username, password:user.password) {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+                
+                self.isLoggedIn = true
+                println("Parse login successful for username: \(PFUser.currentUser().username).")
+                self.leaveLogInVC()
+                
+            } else {
+                
+                // The login failed. Check error to see why.
+                println("Parse login failed, signing up new user..")
+                
+                self.signUpToParse()
+                
+            }
+        }
+    }
+    
+    func signUpToParse() {
+
+            var user = PFUser()
+            user.username = usernameField.text
+            user.password = passwordField.text
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool!, error: NSError!) -> Void in
+                if error == nil {
+                    // Hooray! Let them use the app now.
+                    println("Parse sign up successfull, username: \(user.username) created.")
+                    self.leaveLogInVC()
+                } else {
+                    // Show the errorString somewhere and let the user try again.
+                    println("Parse sign in / up failed!")
+                    // Add an alert for final sign in log in error!
+                }
+            }
+    }
+    
+    
+    
     
     var isLoggedIn: Bool {
         get {
@@ -75,13 +124,26 @@ class LoginViewController: UIViewController {
         
         if isLoggedIn {
             
-            var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
-            
-            UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
-            
-            // replace this controller with the tabbarcontroller
-            
+            var currentUser = PFUser.currentUser()
+            if currentUser != nil {
+                
+                // replace this controller with the tabbarcontroller
+                leaveLogInVC()
+                
+            } else {
+                // Show the signup or login screen
+                return
+            }
+
         }
+        
+    }
+    
+    func leaveLogInVC() {
+        var tbc = storyboard?.instantiateViewControllerWithIdentifier("TabBarController") as? UITabBarController
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController = tbc
+        
         
     }
     

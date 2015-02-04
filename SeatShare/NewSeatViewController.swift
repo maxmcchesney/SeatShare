@@ -28,6 +28,13 @@ class NewSeatViewController: UIViewController {
         // create PFObject and add it to seats
         var newSeat = PFObject(className: "Seat")
         newSeat["name"] = seatNameField.text
+        newSeat.saveInBackgroundWithBlock { (success, error) -> Void in
+            if success {
+                println("newSeat saved")
+            } else {
+                println("error with saving newSeat")
+            }
+        }
         
         FeedData.mainData().feedItems.append(newSeat)
         
@@ -42,6 +49,16 @@ class NewSeatViewController: UIViewController {
     }
     
     
+    @IBAction func presentImagePicker(sender: AnyObject) {
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .Camera
+        imagePicker.cameraDevice = .Rear
+        imagePicker.showsCameraControls = true
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
     
     
     

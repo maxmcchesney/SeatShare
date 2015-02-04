@@ -52,12 +52,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug2-yG-R6N">
+                                <rect key="frame" x="260" y="100" width="81" height="30"/>
+                                <state key="normal" title="Add Picture">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="presentImagePicker:" destination="J7x-sR-TFV" eventType="touchUpInside" id="x9S-g3-reS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zs3-xf-L3V" firstAttribute="top" secondItem="zBj-bH-z9L" secondAttribute="top" constant="20" id="6wQ-zI-gSZ"/>
                             <constraint firstAttribute="trailing" secondItem="Zs3-xf-L3V" secondAttribute="trailing" constant="20" id="7jn-Ip-eaH"/>
+                            <constraint firstItem="ug2-yG-R6N" firstAttribute="top" secondItem="Zs3-xf-L3V" secondAttribute="bottom" constant="40" id="EQG-Bf-KCj"/>
                             <constraint firstItem="Bhw-c8-E8O" firstAttribute="top" secondItem="GRe-gF-01a" secondAttribute="bottom" constant="20" id="GJu-nN-ygx"/>
+                            <constraint firstAttribute="centerX" secondItem="ug2-yG-R6N" secondAttribute="centerX" id="NZn-7T-41G"/>
                             <constraint firstItem="GRe-gF-01a" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="UFF-8m-sc7"/>
                             <constraint firstAttribute="trailing" secondItem="3c5-43-IN6" secondAttribute="trailing" constant="20" id="bW6-Wi-zsF"/>
                             <constraint firstItem="Zs3-xf-L3V" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="hZf-Om-0TG"/>
