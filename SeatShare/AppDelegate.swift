@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         
-        
-        Parse.setApplicationId("", clientKey: "")
+        // Connected to Jo's account
+        Parse.setApplicationId("yJwkYrve51po54BWFsndggMLXv9INdBSWeZYqlMG", clientKey: "5MzZMBYXK2q76njyBYbweTMpvzBfYZTGDjrbqyFm")
         
         
         

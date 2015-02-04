@@ -159,8 +159,8 @@
 		D86B110E1A8130610066E529 /* Main Feeds & Login */ = {
 			isa = PBXGroup;
 			children = (
-				D86B10EB1A810FB10066E529 /* LoginViewController.swift */,
 				D86B10ED1A810FB10066E529 /* Main.storyboard */,
+				D86B10EB1A810FB10066E529 /* LoginViewController.swift */,
 				D86B11101A8131010066E529 /* FeedTableViewController.swift */,
 				D86B11141A81316C0066E529 /* MyFeedTableViewController.swift */,
 			);
@@ -520,6 +520,7 @@
 				D86B11051A810FB10066E529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D86B11061A810FB10066E529 /* Build configuration list for PBXNativeTarget "SeatShareTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +529,7 @@
 				D86B11081A810FB10066E529 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

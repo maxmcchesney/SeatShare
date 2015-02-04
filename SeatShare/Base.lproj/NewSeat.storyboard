@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L6j-T9-4GL">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ll4-nZ-Ozj"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-gF-01a">
                                 <rect key="frame" x="20" y="540" width="270" height="40"/>
                                 <color key="backgroundColor" red="0.18823531270027161" green="0.68235296010971069" blue="0.14901961386203766" alpha="1" colorSpace="deviceRGB"/>
@@ -52,21 +58,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wof-gg-TBp">
+                                <rect key="frame" x="20" y="240" width="560" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Wj3-gQ-Map"/>
+                                </constraints>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="J7x-sR-TFV" eventType="touchUpInside" id="rWN-2B-TtY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zs3-xf-L3V" firstAttribute="top" secondItem="zBj-bH-z9L" secondAttribute="top" constant="20" id="6wQ-zI-gSZ"/>
                             <constraint firstAttribute="trailing" secondItem="Zs3-xf-L3V" secondAttribute="trailing" constant="20" id="7jn-Ip-eaH"/>
                             <constraint firstItem="Bhw-c8-E8O" firstAttribute="top" secondItem="GRe-gF-01a" secondAttribute="bottom" constant="20" id="GJu-nN-ygx"/>
+                            <constraint firstItem="wof-gg-TBp" firstAttribute="top" secondItem="zBj-bH-z9L" secondAttribute="top" constant="240" id="HaL-zU-fh2"/>
                             <constraint firstItem="GRe-gF-01a" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="UFF-8m-sc7"/>
+                            <constraint firstAttribute="trailing" secondItem="wof-gg-TBp" secondAttribute="trailing" constant="20" id="X3B-LG-wzA"/>
+                            <constraint firstItem="wof-gg-TBp" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="Xeh-ji-HfM"/>
                             <constraint firstAttribute="trailing" secondItem="3c5-43-IN6" secondAttribute="trailing" constant="20" id="bW6-Wi-zsF"/>
+                            <constraint firstItem="L6j-T9-4GL" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" id="dTF-An-4Nk"/>
+                            <constraint firstItem="L6j-T9-4GL" firstAttribute="top" secondItem="zBj-bH-z9L" secondAttribute="top" id="f8U-6O-CLH"/>
                             <constraint firstItem="Zs3-xf-L3V" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="hZf-Om-0TG"/>
+                            <constraint firstAttribute="trailing" secondItem="L6j-T9-4GL" secondAttribute="trailing" id="jfe-hh-hUq"/>
                             <constraint firstItem="3c5-43-IN6" firstAttribute="leading" secondItem="GRe-gF-01a" secondAttribute="trailing" constant="20" id="kgv-qB-YuI"/>
                             <constraint firstItem="3c5-43-IN6" firstAttribute="width" secondItem="GRe-gF-01a" secondAttribute="width" id="lbi-eB-qYB"/>
                             <constraint firstItem="Bhw-c8-E8O" firstAttribute="top" secondItem="3c5-43-IN6" secondAttribute="bottom" constant="20" id="zeX-l0-QUQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="seatImageView" destination="L6j-T9-4GL" id="bI8-Ks-gcp"/>
                         <outlet property="seatNameField" destination="Zs3-xf-L3V" id="5uI-fq-ttw"/>
                     </connections>
                 </viewController>
