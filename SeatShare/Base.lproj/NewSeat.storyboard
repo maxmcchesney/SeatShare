@@ -72,6 +72,20 @@
                                     <action selector="takePicture:" destination="J7x-sR-TFV" eventType="touchUpInside" id="rWN-2B-TtY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtd-Fp-XiQ">
+                                <rect key="frame" x="20" y="320" width="560" height="40"/>
+                                <color key="backgroundColor" red="0.23137256503105164" green="0.7568628191947937" blue="0.91764712333679199" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GoR-tF-hnw"/>
+                                </constraints>
+                                <state key="normal" title="Select Venue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="iWy-7P-KLd" kind="presentation" id="wOr-HJ-u4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,30 +101,34 @@
                             <constraint firstItem="L6j-T9-4GL" firstAttribute="top" secondItem="zBj-bH-z9L" secondAttribute="top" id="f8U-6O-CLH"/>
                             <constraint firstItem="Zs3-xf-L3V" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="hZf-Om-0TG"/>
                             <constraint firstAttribute="trailing" secondItem="L6j-T9-4GL" secondAttribute="trailing" id="jfe-hh-hUq"/>
+                            <constraint firstItem="Vtd-Fp-XiQ" firstAttribute="leading" secondItem="zBj-bH-z9L" secondAttribute="leading" constant="20" id="jhF-4N-6Lb"/>
                             <constraint firstItem="3c5-43-IN6" firstAttribute="leading" secondItem="GRe-gF-01a" secondAttribute="trailing" constant="20" id="kgv-qB-YuI"/>
                             <constraint firstItem="3c5-43-IN6" firstAttribute="width" secondItem="GRe-gF-01a" secondAttribute="width" id="lbi-eB-qYB"/>
+                            <constraint firstAttribute="trailing" secondItem="Vtd-Fp-XiQ" secondAttribute="trailing" constant="20" id="o4q-uK-skO"/>
+                            <constraint firstItem="Vtd-Fp-XiQ" firstAttribute="top" secondItem="L6j-T9-4GL" secondAttribute="bottom" constant="20" id="qRI-tm-ac3"/>
                             <constraint firstItem="Bhw-c8-E8O" firstAttribute="top" secondItem="3c5-43-IN6" secondAttribute="bottom" constant="20" id="zeX-l0-QUQ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="seatImageView" destination="L6j-T9-4GL" id="bI8-Ks-gcp"/>
                         <outlet property="seatNameField" destination="Zs3-xf-L3V" id="5uI-fq-ttw"/>
+                        <outlet property="selectVenueButton" destination="Vtd-Fp-XiQ" id="E9z-2Q-ZLE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qC4-D6-sSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="366" y="369"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Venues-->
         <scene sceneID="isz-fk-hPL">
             <objects>
-                <tableViewController id="UYS-xT-BNj" sceneMemberID="viewController">
+                <tableViewController id="UYS-xT-BNj" customClass="VenuesTableViewController" customModule="SeatShare" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0xA-Av-QSy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eoS-hn-3fb">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="venueCell" id="eoS-hn-3fb">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eoS-hn-3fb" id="Uto-nM-ULr">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -122,7 +140,7 @@
                             <outlet property="delegate" destination="UYS-xT-BNj" id="v9G-Zh-SbL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="E2G-se-4aW"/>
+                    <navigationItem key="navigationItem" title="Venues" id="E2G-se-4aW"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ln-tw-4dn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

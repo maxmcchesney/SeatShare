@@ -8,12 +8,14 @@
 
 import UIKit
 
-class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
 //    var seats: [PFObject]?
     
     @IBOutlet weak var seatNameField: UITextField!
     @IBOutlet weak var seatImageView: UIImageView!
+    
+    @IBOutlet weak var selectVenueButton: UIButton!
     
     var imagePicker = UIImagePickerController()
     
@@ -23,10 +25,26 @@ class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.delegate = self
         
         imagePicker.sourceType = .Camera
+        
+        seatNameField.delegate = self
 
 
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let venue = FeedData.mainData().selectedVenue {
+            
+            let venueName = venue["name"] as String
+            selectVenueButton.setTitle(venueName + " (edit)", forState: .Normal)
+            
+        } else {
+            
+            selectVenueButton.setTitle("Select Venue", forState: .Normal)
+        }
+        
+    }
     
     @IBAction func takePicture(sender: AnyObject) {
         
@@ -45,6 +63,23 @@ class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func resizeImage(image: UIImage, withSize size:CGSize) -> UIImage {
+        
+        UIGraphicsBeginImageContext(size)
+        image.drawInRect(CGRectMake(0, 0, size.width, size.height))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage
+        
+    }
     
     @IBAction func saveSeat(sender: AnyObject) {
         
@@ -52,12 +87,25 @@ class NewSeatViewController: UIViewController, UIImagePickerControllerDelegate, 
         var newSeat = PFObject(className: "Seat")
         newSeat["name"] = seatNameField.text
         newSeat["creator"] = PFUser.currentUser()
+
+        // get image to be smaller size
+        // force unwrapping this for testing purposes - need to fix
+        let image = resizeImage(seatImageView.image!, withSize: CGSizeMake(540, 540))    // 180 by 180 but with iphone 6 being 3x...
         
-        FeedData.mainData().feedItems.append(newSeat)
+        // turn uiimage into pffrile and add to newseat
+        let imageData = UIImagePNGRepresentation(image)
+        let imageFile = PFFile(name:"seat.png", data:imageData)
+        newSeat["image"] = imageFile
         
+        if let venue = FeedData.mainData().selectedVenue {
         
+            newSeat["venue"] = venue
+        
+        }
+
         newSeat.saveInBackground()
         
+        FeedData.mainData().feedItems.append(newSeat)
         
         dismissViewControllerAnimated(true, completion: nil)
         

@@ -1,49 +1,56 @@
 //
-//  FeedTableViewController.swift
+//  VenuesTableViewController.swift
 //  SeatShare
 //
-//  Created by Michael McChesney on 2/3/15.
+//  Created by Michael McChesney on 2/5/15.
 //  Copyright (c) 2015 Max McChesney. All rights reserved.
 //
 
 import UIKit
+import CoreLocation
 
-class FeedTableViewController: UITableViewController {
+var onceToken: dispatch_once_t = 0
+
+class VenuesTableViewController: UITableViewController, CLLocationManagerDelegate {
+    
+    var lManager = CLLocationManager()
+    var foundVenues: [AnyObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // TO ADD LOCATIONS / MAPS, DONT FORGET TO ADD LINE TO INFO.PLIST
+        lManager.requestWhenInUseAuthorization()
+        
+        lManager.delegate = self
+        
+        lManager.startUpdatingLocation()
+        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func refreshFeed() {
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        FeedData.mainData().refreshFeedItems { () -> () in
-            // after the refreshFeedItems is finished, run this code
-            self.tableView.reloadData()
+        dispatch_once(&onceToken) { () -> Void in
             
+            if let location = locations.last as? CLLocation {
+                
+                // request to FourSquare for vendors with location
+                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
+                println(self.foundVenues)
+                self.tableView.reloadData()
+                
+            }
         }
         
-    }
-    
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        refreshFeed()
-            
-        }
-    
-    
-    @IBAction func addNewSeat(sender: AnyObject) {
-        
-        // to push to new view controller on different storyboard than main.
-        var newSeatSB = UIStoryboard(name: "NewSeat", bundle: nil)
-        var newSeatVC = newSeatSB.instantiateInitialViewController() as NewSeatViewController
-        
-        presentViewController(newSeatVC, animated: true, completion: nil)
+        lManager.stopUpdatingLocation()
         
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -55,22 +62,36 @@ class FeedTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return FeedData.mainData().feedItems.count
+        return foundVenues.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("feedCell", forIndexPath: indexPath) as FeedCell
-
-        // Configure the cell...
-        let seat = FeedData.mainData().feedItems[indexPath.row]
         
-        cell.seatInfo = seat
-//        cell.textLabel?.text = seat["name"] as? String
+        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as UITableViewCell
+        // Configure the cell...
+        
+        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        
+        cell.textLabel?.text = venue["name"] as? String
 
+        
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        
+        // save the venue
+        
+        FeedData.mainData().selectedVenue = venue
+        
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
